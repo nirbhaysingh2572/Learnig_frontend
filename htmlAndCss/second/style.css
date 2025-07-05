@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1749802449762-5e428ccf9a45?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+}
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+
+#oho{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+}
+
+#oho h1{
+    font-size: 70px;
+    font-family: anurati;
+    font-weight: 100;
+}
+
+
+#center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    text-align: center;
+    font-family: gilroy;
+}
+
+#center h1{
+    font-size: 100px;
+    font-family: anurati;
+    font-weight: 100;
+}
+
+#center p{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: 100;
+}
+
+#center button{
+    background-color: transparent;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+
+}
+
+#center button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+

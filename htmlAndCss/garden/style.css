@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: "Gilroy";
+}
+
+#left{
+    width: 80%;
+    height: 100%;
+}
+
+#ltop{
+    width: 100%;
+    height: 70%;
+    position: relative;
+    padding-top: 40px;
+    padding-left:70px;
+    background-image: url(https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+}
+
+#ltop h1{
+    font-size: 40px;
+}
+
+#ltop #arrow{
+    height: 70px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    font-size: 30px;
+    color: #000;
+    border-radius: 5%;
+    opacity: 0.5;
+
+}
+
+#lbottom{
+    width: 100%;
+    height: 30%;
+    padding: 50px 200px;
+    display: flex;
+    background-color: #000;
+}
+
+#lbottom>h1{
+    font-size: 12px;
+    font-weight: 800;
+    margin-right: 30px;
+    letter-spacing:1px;
+    color: #fff;
+}
+
+#lbtmcontaint{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+#lbtmcontaint .left{
+    width:45%;
+    padding-right: 80px;
+}
+
+#lbtmcontaint .left h1{
+    /* font-family: "Montserrat"; */
+    font-size: 45px;
+    font-weight: 535;
+}
+
+#lbtmcontaint .left p{
+    margin-top: 25px;
+    font-size: 11px;
+    font-weight: 100;
+    opacity: 0.8;
+}
+
+#lbtmcontaint .right{
+    width: 45%;
+    padding-right: 100px;
+}
+
+#lbtmcontaint .right .row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+#lbtmcontaint .right .row .rowelement{
+    display: flex;
+    
+}
+
+.rowelement h3{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rowelement p{
+    font-size: 10px;
+    font-weight: 100;
+    opacity: 0.8;
+}
+
+.rowelement .text{
+    margin-left: 0.60rem;
+}
+
+#right{
+    width: 20%;
+    height: 100%;
+}
+
+#rtop{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 70%;
+    background-color: #fff;
+}
+
+#rtop #nav{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+#nav a{
+    margin-bottom: 3.5rem;
+    text-decoration: none;
+    color: #000;
+    font-size: 17px;
+    font-weight: 533;
+    letter-spacing: 1.5px;
+}
+
+#nav a:nth-child(2){
+    margin-left: 22px;
+}
+
+#nav a:nth-child(2)::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 20px;      
+    transform: translate(-22px,10px);
+    background-color: #000;
+}
+
+#rtop #icons{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+}
+
+#rtop #icons i{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#rtop #rtopflower{
+    width: 110px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: url(https://images.unsplash.com/photo-1584589167171-541ce45f1eea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHBsYW50fGVufDB8fDB8fHww);
+    background-size: cover;
+    background-position: center;
+}
+
+#rtop #rtopflower #icon{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .41);
+    color: #fff;
+
+}
+
+#rbottom{
+    position: relative;
+    width: 100%;
+    height: 30%;
+    padding: 2rem;
+    background-image: url(https://images.unsplash.com/photo-1487700160041-babef9c3cb55?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJvYmJvciUyMHBsYW50fGVufDB8fDB8fHww);
+    background-size: cover;
+    background-position: center;
+}
+
+
+#rbottom #capsule{
+    position: absolute;
+    bottom: 12%;
+    width: 80%;
+    border-radius: 10%;
+    background-color: #fff;
+    padding: 12px;
+}
+
+#capsule .row{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+#capsule .row>h1{
+    font-size: 12px;
+    font-weight: 100;
+}
+
+#capsule .row>p{
+    font-size: 15px;
+    font-weight: 800;
+}
+
