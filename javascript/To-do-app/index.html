@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="main">
+        <h1>My To Do App</h1>
+        <div id="input">
+            <input class="form" type="text" placeholder="Enter a task here">
+            <button class="bbtn" id="save">save</button>
+            <button class="ybtn" id="get">Get Pending Todos</button>
+        </div>
+
+        <!-- to-dos-lists -->
+        <div id="list">
+            <div id="headings">
+                <h2 class="no">No.</h2>
+                <h2 class="item">Todo item</h2>
+                <h2 class="status">Status</h2>
+                <h2 class="action">Action</h2>
+            </div>
+            <hr>
+
+            <!-- dummy row to provent changes -->
+            <!-- <div class="row">
+                <h2 class="no">1</h2>
+                <input class="form" type="hidden" >
+                <p class="item">item</p>
+                <h3 class="status">stetus</h3>
+                <span class="action">
+                    <button class="edit ybtn">Edit</button>
+                    <button class="finish bbtn">Finish</button>
+                    <button class="delet bbtn">Delete</button>
+                </span>
+            </div> 
+            <hr> -->
+            <!-- real todos -->
+            <div id="todos"> </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
