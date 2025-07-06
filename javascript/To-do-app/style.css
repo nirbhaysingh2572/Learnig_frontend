@@ -67,6 +67,10 @@ html,body{
     border: none;
     color: #000;
     font-size: 1.2rem;
+    font-weight: 501;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /* text-transform: uppercase; */
     background-color: rgba(233, 136, 9, 0.797);
 }

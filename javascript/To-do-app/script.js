@@ -1,47 +1,147 @@
 //  `
 console.log("Welcome to my todo app");
 
-let todos = document.querySelector("#todos");
-let getTodo = document.querySelector("#get");
-let saveTodo = document.querySelector("#save");
-let todoInput = document.querySelector("#input>input");
+let main = document.getElementById("main");
+
+//appending main heading
+let h1 = document.createElement("h1");
+h1.innerText = "My To Do App";
+main.appendChild(h1);
+
+//appending input section
+//creating element
+let input  =  document.createElement("div");
+let getTodo = document.createElement("buttun");
+let saveTodo = document.createElement("button");
+let todoInput = document.createElement("input");
+//ading atributs
+input.id = "input";
+todoInput.classList.add("form");
+saveTodo.classList.add("bbtn");
+getTodo.classList.add("ybtn");
+saveTodo.id="save"
+getTodo.id="get"
+todoInput.type="text";
+todoInput.placeholder="Enter a task here";
+saveTodo.innerText = "save";
+getTodo.innerText = "Get Pending Todos";
+
+//appending them
+input.appendChild(todoInput);
+input.appendChild(saveTodo);
+input.appendChild(getTodo);
+main.appendChild(input);
+
+
+//appending list
+let list  =  document.createElement("div");
+main.appendChild(list);
+
+let headings = ()=>{
+    let headings = document.createElement("div");
+    headings.id = "headings";
+
+    let headingData = [{class:"no",text:"No."},{class:"item",text:"Todo item"},{class:"status",text:"Status"},{class:"no",text:"No."},{class:"action",text:"Action"}]
+    headingData.forEach((heading)=>{
+        let h2 = document.createElement("h2");
+        h2.classList.add(heading.class);
+        h2.innerText = heading.text;
+        headings.appendChild(h2);
+    });
+    return headings;
+};
+//apendings headings
+list.appendChild(headings());
+let hr = document.createElement("hr");
+list.appendChild(hr);
+
+//apendings empty todos div
+let todos = document.createElement("div");
+list.appendChild(todos);
+
+
 
 
 let todoData = [];
 
 // adding a ne brand todo
-function addTodo (index, item, status){
-    let t = (status=="in Progress")? "finish":"undo";
-    let row =  ` <div class="row", id = "row${index}">
-                    <h2 class="no">${index+1}.</h2>
-                    <div class = "item">
-                        <p>${item}</p>
-                        <input class="form" type="hidden" >
-                    </div>
-                    <h3 class="status">${status}</h3>
-                    <span class="action">
-                        <button class="edit ybtn", name = "edit" id ="${index}">Edit</button>
-                        <button class="${t} bbtn", name = "finish", id ="${index}">${t}</button>
-                        <button class="delet bbtn", name = "delet", id ="${index}">Delete</button>
-                    </span>
-                </div> 
-                <hr>`;
+function addTodo(index, x){
+    let t = (x.status=="in Progress")? "finish":"undo";
+
+    // // creating all element
+    let row = document.createElement("div");
+    let no = document.createElement("h2");
+    let item = document.createElement("div");
+    let para = document.createElement("p");
+    let input = document.createElement("input");
+    let status = document.createElement("h3");
+    let action = document.createElement("span");
+    let edit = document.createElement("button");
+    let finish = document.createElement("button");
+    let delet = document.createElement("button");
+
+    //adding content
+    no.innerText = index+1 +".";
+    para.innerText = x.item;
+    status.innerText = x.status;
+    edit.innerHTML = "Edit";
+    finish.innerHTML = t;
+    delet.innerHTML = "delet";
+
+
+
+    // //ading classes
+    row.classList.add("row");
+    no.classList.add("no");
+    item.classList.add("item");
+    input.classList.add("form");
+    status.classList.add("status");
+    action.classList.add("action");
+    edit.classList.add("edit", "ybtn");
+    finish.classList.add(t,"bbtn");
+    delet.classList.add("delet", "bbtn");
+
+    // //giving id
+    row.id = "row"+index;
+    edit.id = index;
+    finish.id = index;
+    delet.id = index;
+
+    // //adding atributs
+    input.type = "hidden";
+    edit.name = "edit";
+    finish.name = "finish";
+    delet.name = "delet";
+
+    // // apending child;
+    item.appendChild(para);
+    item.appendChild(input);
+    action.appendChild(edit);
+    action.appendChild(finish);
+    action.appendChild(delet);
+    row.appendChild(no);
+    row.appendChild(item);
+    row.appendChild(status);
+    row.appendChild(action);
 
     return row;
 }
 
 //print function 
 function print(){
+    // filter pending todos
     todoData.sort((a,b)=>{
         if(a.status=="in Progress"&&b.status=="finished")   return -1;
         else    return 1;
     });
-    let alltodo = "";
+
+    todos.innerHTML = ""; 
     todoData.forEach((x,index)=>{
-        let row = addTodo(index,x.item,x.status);
-        alltodo += row;
-    })   
-    todos.innerHTML = alltodo; 
+        let row = addTodo(index,x);
+        todos.appendChild(row);
+        let hr = document.createElement("hr");
+        todos.appendChild(hr);
+    });
 }
 
 // disabling bottom
@@ -124,7 +224,6 @@ todos.addEventListener("click",(event)=>{
 
 // Geting pending toodos
 getTodo.onclick = ()=>{
-    console.log("filterd");
     todoData = todoData.filter((todo)=>{
         return (todo.status == "in Progress");
     });
