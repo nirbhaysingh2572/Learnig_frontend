@@ -1,4 +1,4 @@
-//  `
+
 console.log("Welcome to my todo app");
 
 let main = document.getElementById("main");
@@ -163,6 +163,8 @@ function save(){
     let todo ={item : data, status : "in Progress"}
     todoData.push(todo);
     todoInput.value = '';
+    saveTodo.disabled = true;
+    saveTodo.style.opacity = 0.5;
     print();
 }
 saveTodo.addEventListener("click",save);
