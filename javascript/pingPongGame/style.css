@@ -27,9 +27,8 @@ html,body{
 
 #table{
     position: relative;
-    height: 700px;
-    width: 600px;
-    /* padding: 5px; */
+    height: 70%;
+    width: 35%;
     border: 5px solid #9fc131f3;
     background-color: #9fc13134;
 }
@@ -45,7 +44,7 @@ html,body{
 
 #padel{
     position: absolute;
-    top: 600px;
+    top: 85%;
     height: 30px;
     width: 150px;
     border-radius: 2px;
@@ -62,8 +61,35 @@ html,body{
 
 h2{
     margin: 1rem;
+    text-wrap: nowrap;
 }
 
 hr{
     border: 2px solid #9fc131f3;
 }
+
+@media (max-width : 500px){
+    #main{
+        justify-content: start;
+    }
+
+    #main>h1{
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+    #table{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
+    #scorebord{
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 60%);
+    }
+
+}
+
+
