@@ -121,4 +121,26 @@ document.addEventListener("keydown",(event)=>{
    
 });
 
+// adding touchstart
+var priviousX;
+document.addEventListener('touchstart', function (e) {
+    priviousX = e.touches[0].clientX;
+});
+  
+document.addEventListener('touchmove', function (e) {
+    if(startGame){
+        let currentX = e.touches[0].clientX;
+        let deltaX = currentX - priviousX;
+        // console.log(deltaX);
+        // if(deltaX>5)    move = 0.5;
+        // else if(deltaX<-5)   move = -0.5;
+        move = deltaX * 0.20;
+        priviousX = currentX;
+    }
+});
+
+document.addEventListener('touchend', function (e) {
+    move = 0;
+});
+
 
